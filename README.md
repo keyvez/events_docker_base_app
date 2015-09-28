@@ -35,3 +35,11 @@ Instructions for running
 - ```dm inspect -f '{{ .Driver.IPAddress }}' dev```
 
 At this point you should be able to open a web browser and point to the ip (port 8080) received from the last command and see the site. For example if the ip was 192.168.99.101 then point to http://192.168.99.101:8080
+
+Toubleshooting
+- Look at web server logs
+- ```docker exec -t web-dev tail -f -n 100 /var/log/uwsgi/events/events.log```
+- Look at web server access logs
+- ```docker exec -t web-dev tail -f -n 100 /var/log/nginx/access.log```
+- Look at mysql server logs
+- ````docker logs -f mysql-dev```
