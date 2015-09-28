@@ -1,3 +1,8 @@
+# This is a script for atom ide
+# If you install the save commands package in that ide, this script will execute
+# every time you save a file in the development folder with one of the
+# extensions below, it will reload uwsgi server in the docker container.
+
 {
     "timeout": 4000,
     "commands": [
