@@ -1,0 +1,10 @@
+web:
+  extends:
+    file: ../common/docker-compose.yml
+    service: web
+  volumes_from:
+    - content
+  container_name: web-test
+content:
+  build: content
+  container_name: content-test

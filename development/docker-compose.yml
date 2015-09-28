@@ -1,0 +1,36 @@
+cache:
+  build: redis
+  container_name: cache-dev
+
+data-mysql:
+  image: tianon/true
+  container_name: mysql-data-dev
+  volumes:
+    - /var/lib/mysql{}
+
+db:
+  extends:
+    file: ../common/docker-compose.yml
+    service: db
+  build: mysql
+  #volumes:
+  #  - ./mysql/conf.d:/etc/mysql/conf.d
+  volumes-from:
+    - data-mysql
+  container_name: mysql-dev
+  ports:
+    - "3306:3306"
+
+web:
+  build: content
+  ports:
+    - "8080:8080"
+  container_name: web-dev
+  volumes:
+    - ./content/events:/var/www/events
+    - ./mysql/conf.d:/etc/mysql/conf.d
+  links:
+    - db
+    - cache
+  environment:
+    ENV: dev

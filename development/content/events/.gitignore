@@ -1,0 +1,11 @@
+env
+venv
+temp
+tmp
+__pycahe__
+
+*.pyc
+*.sqlite
+*.coverage
+.DS_Store
+env.sh

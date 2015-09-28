@@ -1,0 +1,6 @@
+db:
+  environment:
+    MYSQL_ROOT_PASSWORD: 6bzR3WuY13tXaVXn7ICWtCEE2ei5Llkz
+    MYSQL_DATABASE: events
+    MYSQL_USER: events
+    MYSQL_PASSWORD: y4hU8m0J8rVxKXoDNXdKL0R9tkyiHxDd

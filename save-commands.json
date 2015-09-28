@@ -1,0 +1,11 @@
+{
+    "timeout": 4000,
+    "commands": [
+        "development/**/*.py : touch development/content/events/.reload",
+        "development/**/*.ini : touch development/content/events/.reload",
+        "development/**/*.html : touch development/content/events/.reload",
+        "development/**/*.js : touch development/content/events/.reload",
+        "development/**/*.css : touch development/content/events/.reload",
+        "development/**/*.conf : touch development/content/events/.reload"
+    ]
+}
